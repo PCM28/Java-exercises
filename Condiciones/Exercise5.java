@@ -15,7 +15,7 @@ public class Exercise5 {
         anio = input.nextInt();
 
         dia++;
-        *//* ONE WAY
+        /* ONE WAY
         if(mes==12 && dia==32){
             anio++;
             mes=1;
@@ -33,7 +33,7 @@ public class Exercise5 {
         } else if(mes==2 && dia==29){
             mes++;
             dia=1;
-        }*//*
+        }*/
         //Second way (Mejor usar if*else is para dar un valor a un aux y con ello trabajar en otro if y no meter dentro de otro haciéndolo largo)
         if (mes==1 || mes==3 || mes==5 || mes==7 || mes==8 || mes==10) diaAux = 31;
             else if (mes==4 || mes==6 || mes==9 || mes==11) diaAux = 30;
