@@ -94,7 +94,7 @@ public class Start {
         System.out.println(e1.mostrarInfo());
         System.out.printf("El precio de pintar la fábrica completa con precio por metro 30 euros es = %.2f", a.costePintura(30.0f));
         //Si usas print o println el resultado te lo mostrará como 5,04E^9, en cambio si usas printf te lo imprime sin exponencial -> 5040000000,000000 (Usas %.2f para mantener 2 decimales)
-        // Well Done boss, 
+        // Well Done boss
     }
     //Ask to Javier: el para que el segundo método de edicio para calcular el coste de pintar, sino habría inconveniente de colocar el precio al final y porque pide pasar como parámetro el color en el primer método para calcular el coste de pintar el edificio
 }
