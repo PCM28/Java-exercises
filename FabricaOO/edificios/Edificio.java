@@ -1,47 +1,70 @@
-package FabricaOO.edificios;
+package FabricaOO.Edificios;
 
-public class Edificio {
+import FabricaOO.Empresa.Empresa;
+
+public abstract class Edificio extends Empresa{
     // Atributos
-    private double anchura;
-    private double altura;
-    private double profundidad;
+    private float anchura;
+    private float altura;
+    private float profundidad;
     private String funcionalidad;
-    enum EdificioTipo {Fabrica, Almacen, Oficina};
-    EdificioTipo edificioTipo;
+    private String tipo;
 
     // Constructor
-    public Edificio(double anchura, double altura, double profundidad, String funcionalidad, EdificioTipo edificioTipo){
-        this.anchura = anchura;
-        this.altura = altura;
-        this.profundidad = profundidad;
-        this.funcionalidad = funcionalidad;
-        this.edificioTipo = edificioTipo;
+    public Edificio(){
+        this.anchura = 0.0f;
+        this.altura = 0.0f;
+        this.profundidad = 0.0f;
+        this.funcionalidad = "";
+        this.tipo = "";
     }
 
     // Gets-Sets
-    public double getAnchura () {return anchura;}
+    public float getAnchura () {return anchura;}
 
-    public void setAnchura(double anchura) {this.anchura = anchura;}
+    public void setAnchura(float anchura) {this.anchura = anchura;}
 
-    public double getAltura () {return altura;}
+    public float getAltura () {return altura;}
 
-    public void setAltura(double altura) {this.altura = altura;}
+    public void setAltura(float altura) {this.altura = altura;}
 
-    public double getProfundidad() {return profundidad;}
+    public float getProfundidad() {return profundidad;}
 
-    public void setProfundidad(double profundidad) {this.profundidad = profundidad;}
+    public void setProfundidad(float profundidad) {this.profundidad = profundidad;}
 
     public String getFuncionalidad() {return funcionalidad;}
 
     public void setFuncionalidad(String funcionalidad) {this.funcionalidad = funcionalidad;}
 
-    public EdificioTipo getEdificioTipo() {return edificioTipo;}
+    public String getTipo() {return tipo;}
 
-    public void setEdificioTipo(EdificioTipo edificioTipo) {this.edificioTipo=edificioTipo;}
+    public void setTipo(String tipo) {this.tipo = tipo;}
 
     // Métodos
-    public float costePintura(String color, double precio){
+    public float costePintura(float precio){
+        float result = precio * this.anchura * this.altura * this.profundidad;
+        if(precio<0) return -1.0f;
+        else return result;
+    }
+    public float costePintura(String lado, float precio){
+        float result = 0.0f;
         
-        return 1;
+        if(lado.equals("ladoaltura")) result = precio * this.anchura * this.altura;
+        else if(lado.equals("ladoprofundidad")) result = precio * this.altura * this.profundidad;
+        
+        if(precio<0) return -1.0f;
+        else return result;
+    }
+
+    public abstract String funcionalidadEdificio();
+    
+    @Override
+    public String mostrarInfo(){
+        return "\nEdificio{ \n \"anchura\" =\"" + this.anchura + 
+                "\", \n\"altura\" = \"" + this.altura +
+                "\", \n \"profundidad\" = \"" + this.profundidad +
+                "\", \n \"funcionalidad\" = \"" + this.funcionalidad +
+                "\", \n \"tipo\" = \"" + this.tipo + 
+                "\", \n \"altura\" = \"" + this.altura + "\" \n}";
     }
 }

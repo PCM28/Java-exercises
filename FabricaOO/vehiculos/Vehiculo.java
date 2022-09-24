@@ -1,22 +1,21 @@
-package FabricaOO.vehiculos;
+package FabricaOO.Vehiculos;
 
-public class Vehiculo {
+import FabricaOO.Empresa.Empresa;
+
+public class Vehiculo extends Empresa{
     // Atributos
-    private String marca;
-    private double precio;
-    private double peso;
-    private String color;
-    private double longitud;
-    enum VehiculoTipo {Vehiculo_Electrico, Vehiculo_Gasoil, Vehiculo_Gasolina};
-    VehiculoTipo vehiculoTipo;
+    protected String marca;
+    protected float precio;
+    protected float peso;
+    protected String color;
+    protected float longitud;
     // Constructor
-    public Vehiculo(String marca, double precio, double peso, String color, double longitud, VehiculoTipo vehiculoTipo) {
-        this.marca = marca;
-        this.precio = precio;
-        this.peso = peso;
-        this.color = color;
-        this.longitud = longitud;
-        this.vehiculoTipo = vehiculoTipo;
+    public Vehiculo() {
+        this.marca = "";
+        this.precio = 0;
+        this.peso = 0.0f;
+        this.color = "";
+        this.longitud = 0.0f;
     }
 
     // Gets - Sets
@@ -24,33 +23,29 @@ public class Vehiculo {
 
     public void setMarca(String marca){this.marca = marca;}
 
-    public double getPrecio() {return precio;}
+    public float getPrecio() {return precio;}
 
-    public void setPrecio(double precio) {this.precio = precio;}
+    public void setPrecio(float precio) {this.precio = precio;}
 
-    public double getPeso() {return peso;}
+    public float getPeso() {return peso;}
 
-    public void setPeso(double peso) {this.peso = peso;}
+    public void setPeso(float peso) {this.peso = peso;}
 
     public String getColor() {return color;}
 
     public void setColor(String color) {this.color = color;}
 
-    public double getLongitud () {return longitud;}
+    public float getLongitud () {return longitud;}
 
-    public void setLongitud (double longitud) {this.longitud = longitud;}
-
-    public VehiculoTipo getVehiculoTipo() {return vehiculoTipo;}
-
-    public void setVehiculoTipo(VehiculoTipo vehiculoTipo) {this.vehiculoTipo=vehiculoTipo;}
+    public void setLongitud (float longitud) {this.longitud = longitud;}
 
     // Métodos
+    @Override
     public String mostrarInfo(){
-        return "Vehiculo{ \"marca\" =\"" + this.getMarca() + 
-                "\", \"tipo\" = \"" + this.getVehiculoTipo() +
-                "\", \"precio\" = \"" + this.getPrecio() +
-                "\", \"peso\" = \"" + this.getPeso() +
-                "\", \"color\" = \"" + this.getColor() +
-                "\", \"longitud\" = \"" + this.getLongitud() + "\" }";
+        return "\nVehiculo{ \n \"marca\" = \"" + this.marca + 
+                "\", \n \"precio\" = \"" + this.precio +
+                "\", \n \"peso\" = \"" + this.peso +
+                "\", \n \"color\" = \"" + this.color +
+                "\", \n \"longitud\" = \"" + this.longitud;
     }
 }
