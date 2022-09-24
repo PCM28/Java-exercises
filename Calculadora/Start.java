@@ -71,9 +71,11 @@ public class Start {
                     num = entrada.nextInt();
                     numS = Integer.toString(num);
                     int j = numS.length();
-                    for(int i=0;i<numS.length()/2;i++){
+                    int i = 0;
+                    while(resul==false && i<numS.length()){
                         if(numS.charAt(i)==numS.charAt(j-1)) resul = true;
-                        else j--;
+                        j--;
+                        i++;
                     }
                     if(resul)System.out.print("El número es capicúa");
                     else System.out.print("El número no es capicúa");
