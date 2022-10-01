@@ -93,7 +93,7 @@ public class Start {
         if(num1<0) return -1;
         else{
             for(int i=num1;i>0;i--){
-                factorial  = factorial * i;
+                factorial = factorial * i;
             }
             return factorial;
         }

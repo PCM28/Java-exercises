@@ -9,7 +9,9 @@ public class Start {
         String numS;
         boolean resul = false;
         do{
+            System.out.print("--------------------------------");
             System.out.println("\nCalculadora de Calculator S.A");
+            System.out.println("--------------------------------");
             System.out.println("Introduzca una opción del menú:\n");
             System.out.print(
                             "1. Sumar \n" +
@@ -28,7 +30,7 @@ public class Start {
                     System.out.println("Introduzca el segundo número flotante a sumar:");
                     num2 = entrada.nextFloat();
                     resultado = num1+num2;
-                    System.out.println("La suma de NUM1 y NUM2 es RESULTADO: " + resultado);
+                    System.out.println("La suma de " +num1+" y "+num2+" es: "+resultado);
                     break;
                 case 2:
                     System.out.println("Introduzca el primer número flotante a restar:");
@@ -36,7 +38,7 @@ public class Start {
                     System.out.println("Introduzca el segundo número flotante a restar:");
                     num2 = entrada.nextFloat();
                     resultado = num1-num2;
-                    System.out.println("La suma de NUM1 y NUM2 es RESULTADO: " + resultado);
+                    System.out.println("La resta de " +num1+" y "+num2+" es: "+resultado);
                     break;
                 case 3:
                     System.out.println("Introduzca el primer número flotante a multiplicar:");
@@ -44,7 +46,7 @@ public class Start {
                     System.out.println("Introduzca el segundo número flotante a multiplicar:");
                     num2 = entrada.nextFloat();
                     resultado = num1*num2;
-                    System.out.println("La suma de NUM1 y NUM2 es RESULTADO: " + resultado);
+                    System.out.println("La multiplicación de " +num1+" y "+num2+" es: "+resultado);
                     break;
                 case 4:
                     System.out.println("Introduzca el primer número flotante a dividir:");
@@ -53,7 +55,7 @@ public class Start {
                     num2 = entrada.nextFloat();
                     if(num2!=0) {
                         resultado = num1/num2;
-                        System.out.println("La suma de NUM1 y NUM2 es RESULTADO: " + resultado);
+                        System.out.println("La división de " +num1+" y "+num2+" es: "+resultado);
                     } else System.out.println("Error división por 0");
                     break;
                 case 5:
@@ -64,30 +66,26 @@ public class Start {
                     System.out.println("Introduzca el tercer número flotante de los 3:");
                     num3 = entrada.nextFloat();
                     resultado = (num1>num2 && num1>num3)?num1:((num2>num1 && num2>num3)?num2:num3);
-                    System.out.println("EL número "+ resultado +" es el mayor de los 3 números");
+                    System.out.println("El número "+ resultado +" es el mayor de los 3 números");
                     break;
                 case 6:
                     System.out.println("Introduzca un número para saber si es capicúa:");
                     num = entrada.nextInt();
                     numS = Integer.toString(num);
                     int j = numS.length();
-                    int i = 0;
-                    while(resul==false && i<numS.length()){
+                    for(int i=0;i<j/2;i++){
                         if(numS.charAt(i)==numS.charAt(j-1)) resul = true;
-                        j--;
-                        i++;
                     }
-                    if(resul)System.out.print("El número es capicúa");
-                    else System.out.print("El número no es capicúa");
+                    if(resul)System.out.println("SÍ es capicúa");
+                    else System.out.println("NO es capicúa");
                     break;
                 case 0:
-                    System.out.println("El programa a finalizado");
+                    System.out.println("\nEl programa a finalizado");
                     break;
                 default:
-                    System.out.println("Opción errónea");
+                    System.out.println("\nOpción errónea");
             }
             System.out.println("");
         }while(control!=0);
     }
 }
-// Ni ta mal right?? >;)
